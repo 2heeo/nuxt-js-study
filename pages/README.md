@@ -184,3 +184,18 @@ SEO(Search Engine Optimization)는 한국어로는 '검색엔진 최적화'라�
 
 `pages/parent/child.vue` and `pages/parent/child2.vue` will be rendered as parent/child and parent/child2.
 
+# 07. TRANSITIONS
+## Nuxt transitions
+- `pages/index.vue` and `pages/fade.vue` use the default page transiton.
+- `pages/bounce.vue` uses the `transition` property with a bounce transition
+- `pages/slide.vue` uses the `transition` property with a slide-bottom transition.
+- `layout/default.vue` contains the classes for all transitions.
+
+### ???
+css에서 사용했던 trainsiton 속성이랑 같은 역할한다고 생각하면 될듯..
+한 가지 헷갈렸던건 왜 `pages/fade.vue`에는 `transition` 속성을 따로 사용하지 않았는데 클릭했을때 페이드 처리가 되는가..?
+요건 `index.vue`가 `fade.vue`를 기본 페이지로 하는데 `default.vue`의 `<style>`에 opacity 관련 스타일 선언이 있어서 그런거 같긴함..
+한 가지 더 궁금한건 왜 Bounce를 누르고 Fade를 누르면 페이드 처리가 아니라 바운스가 되는가?
+Bounce를 누르고 Home을 누르면 바운스가 되고, Slide를 누르고 Home을 누르면 슬라이드가 되는거도 모르겠다;
+
+

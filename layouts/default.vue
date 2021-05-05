@@ -2,12 +2,10 @@
   <div>
     <nav>
       <ul>
-        <li>
-          <NuxtLink to="/">Home</NuxtLink>
-        </li>
-        <li>
-          <NuxtLink to="/parent">Parent</NuxtLink>
-        </li>
+        <li> <NuxtLink to="/">Home</NuxtLink> </li>
+        <li> <NuxtLink to="/fade">Fade</NuxtLink> </li>
+        <li> <NuxtLink to="/bounce">Bounce</NuxtLink> </li>
+        <li> <NuxtLink to="/slide">Slide</NuxtLink> </li>
       </ul>
     </nav>
     <main>
@@ -16,10 +14,63 @@
     </main>
   </div>
 </template>
-
 <style>
-:root {
-  --primary-color: #00c58e;
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.5s;
+}
+.layout-enter,
+.layout-leave-to {
+  opacity: 0;
+}
+
+.slide-bottom-enter-active,
+.slide-bottom-leave-active {
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+.slide-bottom-enter,
+.slide-bottom-leave-to {
+  opacity: 0;
+  transform: translate3d(0, 15px, 0);
+}
+.bounce-enter-active {
+  transform-origin: top;
+  animation: bounce-in 0.8s;
+}
+.bounce-leave-active {
+  transform-origin: top;
+  animation: bounce-out 0.5s;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes bounce-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(0);
+  }
 }
 
 body {
@@ -29,16 +80,12 @@ body {
   margin: 0;
 }
 
-a {
+nav a {
   color: inherit;
   text-decoration: none;
 }
-nav a:hover {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+a.nuxt-link-exact-active {
+  color: #00c58e;
 }
 
 main {
@@ -69,7 +116,5 @@ li {
 nav {
   padding: 0 1rem;
 }
-a.nuxt-link-exact-active {
-  color: #00c58e;
-}
+
 </style>
