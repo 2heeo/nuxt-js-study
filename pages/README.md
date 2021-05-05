@@ -43,7 +43,7 @@ More information about the usage of this directory in [the documentation](https:
 - 후킹(hooking)은 소프트웨어 공학 용어로, 운영 체제나 응용 소프트웨어 등의 각종 컴퓨터 프로그램에서 소프트웨어 구성 요소 간에 발생하는 함수 호출, 메시지, 이벤트 등을 중간에서 바꾸거나 가로채는 명령, 방법, 기술이나 행위를 말한다.
 - 예제 실행 에러가 아래처럼 발생해서 알아보니, `@nuxt/http`가 없어서 그런거라 `npm install @nuxt/http` 명령어로 설치함
 ```
-✖ Nuxt Fatal Error                                                                   │
+✖ Nuxt Fatal Error
    ╭────────────────────────────────────────────────────────────────────────────────────────╮
    │                                                                                        │
    │   ✖ Nuxt Fatal Error                                                                   │
@@ -145,3 +145,15 @@ npm run dev
 SEO(Search Engine Optimization)는 한국어로는 '검색엔진 최적화'라는 의미이며, 사이트를 검색자(검색 사용자)에게 최적화시키는 것을 의미한다.
 간단히 말하면 검색 결과를 최상단에 노출하게 만드는 기법이다;
 (참고: https://m.blog.naver.com/isanghangot/221299718444)
+
+# MISCELLANEOUS
+## 5-1) Lazy Loading Components
+`components/MountainsList.vue` uses `fetch` to fetch data from an API and uses:
+
+- `$fetchState.pending` : to show a loading message when waiting for the data to load.
+- `$fetchState.error` : to show an error message if the component does not load.
+- `pages/index.vue` shows how to lazy load a component by prefixing it with the word "Lazy". (`pages/index.vue`는 `Lazy`라는 프리픽스를 사용하여 컴포넌트를 레이지 로딩하는 것을 보여준다.)
+
+`nuxt.config.js` shows `components: true` for auto importing components.
+
+

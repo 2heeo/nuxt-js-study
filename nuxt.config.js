@@ -6,7 +6,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   // Head Property - https://nuxtjs.org/docs/2.x/features/meta-tags-seo
   head: {
-    title: 'My amazing Nuxt application',
+    title: 'nuxt-js-study',
     titleTemplate: 'Nuxt | %s',
     meta: [
       { charset: 'utf-8' },
