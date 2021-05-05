@@ -20,7 +20,9 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
+  // Global CSS - https://nuxtjs.org/docs/2.x/features/configuration#pre-processors
   css: [
+    '~/assets/main.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
