@@ -36,7 +36,9 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
+  // Modules - https://nuxtjs.org/docs/2.x/directory-structure/modules
   modules: [
+    '@nuxt/http'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

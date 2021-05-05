@@ -33,4 +33,24 @@ More information about the usage of this directory in [the documentation](https:
 - ***nuxt.config.js*** contains the ***loading*** property which imports the loading component (***nuxt.config.js***은 로딩 컴포넌트를 임포트하는 ***loading*** 속성을 가진다.)
 - ***pages/loading.vue*** programmatically starts the loader so we force the page to take 2 seconds to load (***pages/loading.vue***는 프로그래밍적으로 로더를 시작하기 때문에, 페이지를 실행하는데 2초가 걸린다)
 
+# 03. DATA FETCHING
+## asyncData Hook
+***pages/index.vue*** and ***pages/posts/_id*** use the ***asyncData*** hook and the ***$http*** module to fetch our list of mountains from our API.
 
+***pages/index.vue*** 와 ***pages/posts/_id*** 는 API로 부터 mountains 리스트 fetch 하기 위해 ***asyncData***(비동기 데이터) hook과 ***$http*** 모듈을 사용한다.
+
+### ???
+- 후킹(hooking)은 소프트웨어 공학 용어로, 운영 체제나 응용 소프트웨어 등의 각종 컴퓨터 프로그램에서 소프트웨어 구성 요소 간에 발생하는 함수 호출, 메시지, 이벤트 등을 중간에서 바꾸거나 가로채는 명령, 방법, 기술이나 행위를 말한다.
+- 예제 실행 에러가 아래처럼 발생해서 알아보니, @nuxt/http가 없어서 그런거라 ***npm install @nuxt/http*** 명령어로 설치함
+```
+✖ Nuxt Fatal Error                                                                   │
+   ╭────────────────────────────────────────────────────────────────────────────────────────╮
+   │                                                                                        │
+   │   ✖ Nuxt Fatal Error                                                                   │
+   │                                                                                        │
+   │   Error: Cannot find module '@nuxtjs/eslint-module'                                    │
+   │   Require stack:                                                                       │
+   │   - /Users/heeo.8986/data/project/nuxt-js-study/node_modules/@nuxt/core/dist/core.js   │
+   │                                                                                        │
+   ╰────────────────────────────────────────────────────────────────────────────────────────╯
+```
