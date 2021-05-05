@@ -171,3 +171,8 @@ SEO(Search Engine Optimization)는 한국어로는 '검색엔진 최적화'라�
 `layouts/default.vue` shows the styles for `nuxt-link-active` and `nuxt-link-exact-active`.
 
 별거 없음; `layouts/defualt.vue` 의 `<style>`안에 보면 link 텍스트 스타일 커스텀한 게 다임;
+
+## 6-2) Dynamic Pages
+- `pages/_slug.vue` shows data coming from the route params.
+- `pages/index.vue` fetches our mountains from our API.
+- `pages/_continent/_mountain.vue` shows the detail page for each mountain in each continent.
