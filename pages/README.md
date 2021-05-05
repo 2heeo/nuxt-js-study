@@ -176,3 +176,11 @@ SEO(Search Engine Optimization)는 한국어로는 '검색엔진 최적화'라�
 - `pages/_slug.vue` shows data coming from the route params.
 - `pages/index.vue` fetches our mountains from our API.
 - `pages/_continent/_mountain.vue` shows the detail page for each mountain in each continent.
+
+## 6-3) Nested Pages
+`pages/parent.vue` contains the `<NuxtChild>` component. Everything on this page will be seen on both the parent and child pages.
+
+`pages/parent/index.vue` contains text that will be replaced when the child links are clicked.
+
+`pages/parent/child.vue` and `pages/parent/child2.vue` will be rendered as parent/child and parent/child2.
+
