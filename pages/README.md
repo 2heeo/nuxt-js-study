@@ -165,3 +165,9 @@ SEO(Search Engine Optimization)는 한국어로는 '검색엔진 최적화'라�
 - `plugins/nuxt-ready.client.js` shows:
 
 `window.onNuxtReady` - logs a message to the console when Nuxt is ready.
+
+# 06. ROUTING
+## 6-1) Active Link Classes
+`layouts/default.vue` shows the styles for `nuxt-link-active` and `nuxt-link-exact-active`.
+
+별거 없음; `layouts/defualt.vue` 의 `<style>`안에 보면 link 텍스트 스타일 커스텀한 게 다임;
