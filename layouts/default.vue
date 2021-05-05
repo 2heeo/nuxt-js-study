@@ -1,5 +1,15 @@
 <template>
   <div>
+    <nav>
+      <ul>
+        <li>
+          <NuxtLink to="/">Home</NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/loading">Loading</NuxtLink>
+        </li>
+      </ul>
+    </nav>
     <main>
       <img src="~/assets/logo.svg" />
       <Nuxt />
@@ -18,6 +28,17 @@ body {
   margin: 0;
 }
 
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a.nuxt-link-exact-active {
+  color: var(--primary-color);
+}
+
 main {
   margin: 0 auto;
   margin-top: 25vh;
@@ -25,5 +46,23 @@ main {
   padding: 0 1rem;
   max-width: 1280px;
   text-align: center;
+}
+
+nav {
+  padding: 0 1rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+li {
+  margin: 0 0.5rem;
+  padding: 0.25rem;
+  font-size: 1.2rem;
 }
 </style>

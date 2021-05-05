@@ -28,6 +28,7 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
+  // Activate components - https://nuxtjs.org/docs/2.x/directory-structure/components#components-module
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
@@ -44,18 +45,21 @@ export default {
 
    
   // modifying the default loader
-  loading: {
-    color: 'DodgerBlue',
-    height: '10px',
-    continuous: true,
-    duration: 3000
-  },
+  // loading: {
+  //   color: 'DodgerBlue',
+  //   height: '10px',
+  //   continuous: true,
+  //   duration: 3000
+  // },
 
   // modifying the loading indicator for spa  - https://nuxtjs.org/docs/2.x/features/loading
-  loadingIndicator: {
-    name: 'chasing-dots',
-    color: 'purple',
-    background: 'green',
-    duration: 10000
-  }
+  // loadingIndicator: {
+  //   name: 'chasing-dots',
+  //   color: 'purple',
+  //   background: 'green',
+  //   duration: 10000
+  // }
+
+  // importing a custom loader. this will overwrite the default loader
+  loading: '~/components/LoadingBar.vue'
 }
