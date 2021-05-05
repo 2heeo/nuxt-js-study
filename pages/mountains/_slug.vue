@@ -1,6 +1,10 @@
 <template>
   <article>
     <h1>{{ mountain.title }}</h1>
+    <p v-if="$fetchState.pending">
+      <span class="loading"></span>
+    </p>
+    <p v-else-if="$fetchState.error">Error while fetching mountains 🤬</p>
     <section>
       <img :src="mountain.image" :alt="mountain.title" />
       <p>{{ mountain.description }}</p>
@@ -10,11 +14,15 @@
 </template>
 <script>
 export default {
-  async asyncData({ $http, params }) {
-    const mountain = await $http.$get(
-      `https://api.nuxtjs.dev/mountains/${params.slug}`
+  data() {
+    return {
+      mountain: {}
+    }
+  },
+  async fetch() {
+    this.mountain = await this.$http.$get(
+      `https://api.nuxtjs.dev/mountains/${this.$route.params.slug}`
     )
-    return { mountain }
   },
   methods: {
     goBack() {
