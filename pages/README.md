@@ -17,3 +17,16 @@ More information about the usage of this directory in [the documentation](https:
 ***pages/loading.vue*** programmatically starts the loader so we force the page to take 2 seconds to load
 
 ***nuxt.config.js***에는 디폴트 로딩을 수정하는 ***loading*** 속성이 있다. ***pages/loading.vue*** 는 프로그래밍적으로(?) 로더를 시작하므로, 우리가 페이지 로딩을 실행 할 때 2초가 걸린다.
+
+## Customize Nuxt Loading Indicator
+In this example:
+
+***nuxt.config.js*** contains:
+
+- ***ssr***: ***false*** so we only have client side rendering (false, 따라서 client 쪽 렌더링만 가진다)
+- ***loadingIndicator*** property to modify the default spinner (디폴트 스피너를 수정하기 위한 ***loadingIndicator*** 속성)
+
+### ??
+- 프로젝트를 run 할 때만 커스텀 로딩화면이 보이고, 페이지가 로드된 이후 새로고침을 하면 로딩화면이 안보임
+- nuxt.config.js에서 loadingIndicator를 추가하고, 기존의 loading 속성은 삭제해야 하는 것인가?
+

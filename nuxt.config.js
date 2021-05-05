@@ -1,5 +1,6 @@
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  // Set ssr to false to see the loading indicator - https://nuxtjs.org/docs/2.x/features/rendering-modes
   ssr: false,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -42,11 +43,19 @@ export default {
   },
 
    
-   // modifying the default loader
-   loading: {
+  // modifying the default loader
+  loading: {
     color: 'DodgerBlue',
     height: '10px',
     continuous: true,
     duration: 3000
+  },
+
+  // modifying the loading indicator for spa  - https://nuxtjs.org/docs/2.x/features/loading
+  loadingIndicator: {
+    name: 'chasing-dots',
+    color: 'purple',
+    background: 'green',
+    duration: 10000
   }
 }
