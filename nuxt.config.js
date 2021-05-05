@@ -109,7 +109,9 @@ export default {
   },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  // Plugins - https://nuxtjs.org/docs/2.x/directory-structure/plugins
   plugins: [
+    'plugins/nuxt-ready.client.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

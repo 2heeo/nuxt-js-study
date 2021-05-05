@@ -18,11 +18,22 @@ body {
   margin: 0;
 }
 
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover,
+a.nuxt-link-exact-active {
+  color: var(--primary-color);
+}
+
 button {
   background: var(--primary-color);
   padding: 0.75rem 1.5rem;
   outline: none;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   font-size: 1rem;
   border: none;
   cursor: pointer;
@@ -41,16 +52,10 @@ button:hover {
 }
 
 main {
-  margin: 0 auto;
-  margin-top: 25vh;
-  margin-bottom: 2rem;
-  padding: 0 1rem;
-  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
+  justify-content: center;
+  min-height: 100vh;
 }
 </style>

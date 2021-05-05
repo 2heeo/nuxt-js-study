@@ -146,7 +146,7 @@ SEO(Search Engine Optimization)는 한국어로는 '검색엔진 최적화'라�
 간단히 말하면 검색 결과를 최상단에 노출하게 만드는 기법이다;
 (참고: https://m.blog.naver.com/isanghangot/221299718444)
 
-# MISCELLANEOUS
+# MISCELLANEOUS (라고 쓰고 etc라고 읽는다)
 ## 5-1) Lazy Loading Components
 `components/MountainsList.vue` uses `fetch` to fetch data from an API and uses:
 
@@ -156,4 +156,12 @@ SEO(Search Engine Optimization)는 한국어로는 '검색엔진 최적화'라�
 
 `nuxt.config.js` shows `components: true` for auto importing components.
 
+## 5-2) Nuxt Helpers
+`pages/index.vue` shows:
 
+- `$nuxt.isOnline` and `$nuxt.isOffline` - tells the user if they are online or offline.
+- `renderedOn` - prints a message telling us if the page is rendered on the server or client.
+- `$nuxt.refresh()` - refreshes data without refreshing the page.
+- `plugins/nuxt-ready.client.js` shows:
+
+`window.onNuxtReady` - logs a message to the console when Nuxt is ready.
