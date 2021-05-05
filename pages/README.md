@@ -76,4 +76,47 @@ More information about the usage of this directory in [the documentation](https:
 `nuxt.config.js` contains the css property for globally adding a css file.
 
 `assets/main.css` shows how to reference the DMSans fonts from the assets folder using the `@font-face` rule.
+## 4-2) Pre-processors
+`pages/index.vue` uses `pug` as a template language and `sass` for styling.
+
+`nuxt.config.js`:
+- registers the style resources module.
+- contains a `styleResources` property to add `assets/variables.scss`.
+- contains a `css property` to add `assets/main.scss`.
+- `package.json` shows the dependencies needed. (`package.json`는 필요한 종속성을 보여준다.)
+
+### ???
+- 에러가 나서 아레의 플러그인들을 설치함
+```
+npm install @nuxtjs/style-resources
+npm install scss
+npm install scss-loader
+npm install pug
+npm install pug-plain-loader
+```
+그래도 안돼서 예제 페이지의 package.json과 에러메세지를 보고 아래의 플러그인들을 더 설치해봄
+```
+npm install fibers
+npm install css
+npm install css-loader
+```
+순간 페이지가 잘 나와서 에러메세지에는 있지만, 예제의 package.json엔 없었던 css와 css-loader를 삭제해보았는데, 그 뒤로 다시 안됨
+플러그인을 다시 깔아도 안됨
+
+```
+Module build failed (from ./node_modules/sass-loader/dist/cjs.js):
+TypeError: this.getOptions is not a function
+    at Object.loader (/Users/heeo.8986/data/project/nuxt-js-study/node_modules/sass-loader/dist/index.js:25:24)
+```
+요 에러 메세지의 `TypeError: this.getOptions is not a function`를 검색해서 sass-loader의 버전을 `^10`으로도 낮춰보고(`npm add sass-loader@^10.1.1`), `npm i`도 해보고, 노드버전도 바꾸고, `npm rebuild node-sass`도 해보고, 서버도 다시 켜봤는데 안됨 ㅠㅠ
+
+```
+npm uninstall sass-loader
+npm install sass-loader@10
+npm run dev
+```
+다시 지우고, 10버전으로 깔고, 서버를 다시켜니 됐다.(위에서 sass-loader버전 을 add로 바꿔서 안됐던건가;)
+그리고 css 관련 플러그인들은 일단 냅둬보는걸로..
+
+그리고 이전 예제에서 사용했던 `nuxt.config.js`의 css에서 `'~/assets/main.css'`도 지우지 않으면 에러남
 
