@@ -120,3 +120,28 @@ npm run dev
 
 그리고 이전 예제에서 사용했던 `nuxt.config.js`의 css에서 `'~/assets/main.css'`도 지우지 않으면 에러남
 
+# 04. SEO
+## SEO Twitter and Open Graph
+`components/SocialHead` uses the `head` property to show `meta` for both Twitter and Open Graph social sharing using props.
+
+`pages/mountains/slug.vue` uses the `pages/mountains/slug.vue` component passing the mountain's title, description and image as the values for props. It also uses the `head` tag to set the canonical link.
+
+`nuxtconfig.js` shows the `head` tag with default `meta` for social sharing for when the the `SocialHead` component is not used as well as the canonical link.
+
+`components/SocialHead`는 `head` 속성을 사용하여 `props`를 사용하는 Twitter와 Open Graph 소셜 쉐어링에 대해 `meta`를 표시한다.
+
+`pages/mountains/slug.vue`는 mountain들의 타이틀, 설명과 이미지를 전달하는 `pages/mountains/slug.vue` 컴포넌트를 사용한다.
+`pages/mountains/slug.vue`는 또한 `head` 태그를 사용하여 표준 링크를 설정한다
+
+`nuxtconfig.js`는 `SocialHead` 컴포넌트가 표준링크와 함께 사용되지 않을 때, 소셜쉐어링을 위한 디폴트 `meta`가 있는 `head`태그를 표시한다.
+
+### ???
+트위터랑 오픈 그래프가 뭔가 했는데, 트위터나 카톡 같은데서 링크 공유 할때 뜨는 이미지,타이틀,설명 이었다; 카톡 말풍선타입 생각하면 될듯.
+요 페이지에 매우 잘 나와있다 (https://velog.io/@sso/open-graph-tag-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0)
+
+메타 태그도 위의 링크에 잘 나와있는데, 검색 결과에서 보여지기 바라는 제목, 설명, 이미지등을 제공하기 위한 HTML, XHTML의 `<meta ...>`형태의 태그를 의미한다.
+쉽게 말해 메타데이터는 데이터에 대한 데이터(정보)를 말한다.
+
+SEO(Search Engine Optimization)는 한국어로는 '검색엔진 최적화'라는 의미이며, 사이트를 검색자(검색 사용자)에게 최적화시키는 것을 의미한다.
+간단히 말하면 검색 결과를 최상단에 노출하게 만드는 기법이다;
+(참고: https://m.blog.naver.com/isanghangot/221299718444)

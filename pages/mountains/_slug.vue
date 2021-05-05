@@ -1,10 +1,11 @@
 <template>
   <article>
+    <SocialHead
+      :title="mountain.title"
+      :description="mountain.description"
+      :image="mountain.image"
+    />
     <h1>{{ mountain.title }}</h1>
-    <p v-if="$fetchState.pending">
-      <span class="loading"></span>
-    </p>
-    <p v-else-if="$fetchState.error">Error while fetching mountains 🤬</p>
     <section>
       <img :src="mountain.image" :alt="mountain.title" />
       <p>{{ mountain.description }}</p>
@@ -14,19 +15,26 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      mountain: {}
-    }
-  },
-  async fetch() {
-    this.mountain = await this.$http.$get(
-      `https://api.nuxtjs.dev/mountains/${this.$route.params.slug}`
-    )
+  async asyncData({ params }) {
+    const mountain = await fetch(
+      `https://api.nuxtjs.dev/mountains/${params.slug}`
+    ).then((res) => res.json())
+    return { mountain }
   },
   methods: {
     goBack() {
       return this.$router.go(-1)
+    }
+  },
+  head() {
+    return {
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: `https://nuxtjs.org/mountains/${this.$route.params.slug}`
+        }
+      ]
     }
   }
 }
